@@ -1,4 +1,4 @@
-# Task Manager powered by Agrosatelite (agrosatelite.com.br)
+# Task Manager for Google Earth Engine powered by Agrosatelite (agrosatelite.com.br)
 
 
 ## Install Google Cloud SDK
