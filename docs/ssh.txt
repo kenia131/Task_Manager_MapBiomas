@@ -1,0 +1,4 @@
+scp -P22951 marciano@189.90.55.206:/disco1/mapbiomas/data/reference/amostras/raster/agric0001.tif ~/
+scp -P22951 marciano@189.90.55.202:/disco1/mapbiomas/data/running/mapbiomas/classification/annual/cerrado_1999_train.tif ~/
+
+scp -P 22951 L5_T1_TOA_221065_2013_WET_qmo.tif marciano@200.201.194.155:/home/marciano/mapbiomas/v3/classification/data/landsat/

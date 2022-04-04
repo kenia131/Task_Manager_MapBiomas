@@ -1,0 +1,22 @@
+ee.mapclient.addToMap(feature_collection, {'min':0, 'max': 1})
+
+gdal_translate -ot Byte -of GTiff input.tif output.tif
+
+imgTrain = imgTrain.select(imgTrain.bandNames().removeAll(["constant"]));
+
+gdal_merge.py -o 2002.tif -n 0 -a_nodata 0 -of gtiff -co compress=DEFLATE -co tiled=yes -co tfw=yes -co bigtiff=yes -v  L5_T1_TOA_*
+
+gdal_calc.py -A cerrado_1999.tif -B cerrado_2000.tif -C cerrado_2001.tif  --co="COMPRESS=DEFLATE"  --outfile=cerrado_1998_train.tif --calc="(A+B+C)>=3" --NoDataValue=0 &
+
+#gdal_calc with diferents dimensions
+gdalbuildvrt -separate combined.vrt dem1.tif dem2.tif
+gdal_calc.py -A combined.vrt --A_band=1 -B combined.vrt --B_band=2 -C combined.vrt --C_band=3 --co="COMPRESS=DEFLATE"  --calc="(A+B+C)>=3" --outfile cerrado_1998_train.tif
+
+gdal_translate cerrado_1999_train2.tif out.tif -co COMPRESS=DEFLATE
+
+case when "PANTANAL" is NULL then 0 else "PANTANAL" end
+
+
+#list assets
+var items = ee.data.getList({id: 'users/JunXiong1981/AHI'})
+print(items)

@@ -1,0 +1,9 @@
+__pycache__/
+env/
+data/
+.idea/
+.idea
+.idea/*
+/.idea
+*.pyc
+.vscode/
